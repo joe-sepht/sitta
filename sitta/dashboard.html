@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dashboard SITTA</title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="dashboard-page">
+    <header class="main-header">
+    <div class="navbar-left">
+        <img src="assets/SITTA_UT.png" width="300" height="45" alt="Logo">
+    </div>
+
+    <nav class="navbar-right">
+        <ul class="nav-links" id="nav-links">
+            <li>
+                <a href="stok.html">
+                <img src="assets/Info.svg" alt="Informasi" class="nav-icon">
+                Informasi Bahan Ajar
+                </a>
+            </li>
+            <li>
+                <a href="tracking.html">
+                <img src="assets/track.svg" alt="Lacak" class="nav-icon">
+                Tracking Pengiriman
+                </a>
+            </li>
+
+            <li class="nav-item dropdown">
+            <a href="#" class="dropdown-toggle">
+                <img src="assets/report.svg" alt="Laporan" class="nav-icon">
+                Laporan ▾</a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Monitoring Progress DO Bahan Ajar</a></li>
+                <li><a href="#">Rekap Bahan Ajar</a></li>
+            </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                <img src="assets/history.svg" alt="Lacak" class="nav-icon">                
+                Histori Transaksi Bahan Ajar
+                </a>
+            </li>
+        </ul>
+
+        <div class="nav-user">
+            <span id="nav-username"></span>
+            <button id="logout-btn" onclick="logout()">Keluar</button>
+        </div>
+    </nav>
+</header>
+
+    <div class="dashboard">
+        <h1>Dashboard Aplikasi SITTA</h1>
+        <h2 id="greeting"></h2>
+
+        <div class="search-container">
+            <form class="search-form" id="searchForm" role="search">
+                <label for="searchInput">No. DO/Billing: </label>
+                <input type="search" id="searchInput" placeholder="Nomor Delivery Order" aria-label="Nomor DO"/>
+                <button type="submit">Cari</button>
+            </form>
+
+            <div id="hasil" class="hasil"></div>
+        </div>
+    </div>
+
+    <section id="alur" class="alur">
+            <h2>Selamat Datang di <span>SITTA</span></h2>
+            <p>Sistem pengelolaan layanan dan distribusi bahan ajar Universitas Terbuka</p>
+
+            <div class="alur-container">
+                <a href="stok.html" class="alur-link">
+                    <div class="alur-item">
+                        <img src="assets/Info.svg" alt="Info BA">
+                        <h3>Informasi Bahan Ajar</h3>
+                    </div>
+                </a>
+
+                <a href="tracking.html" class="alur-link">
+                    <div class="alur-item">
+                        <img src="assets/track.svg" alt="Tracking">
+                        <h3>Tracking Pengiriman</h3>
+                    </div>
+                </a>
+
+                <a href="laporan.html" class="alur-link">
+                    <div class="alur-item">
+                        <img src="assets/report.svg" alt="Laporan">
+                        <h3>Laporan</h3>
+                    </div>
+                </a>
+                
+                <a href="history.html" class="alur-link">
+                    <div class="alur-item">
+                        <img src="assets/history.svg" alt="History">
+                        <h3>History Transaksi</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+    <!--Javascript-->
+    <script src="js/script.js"></script>
+
+    <footer class="footer">
+        Copyright &copy; <span>Joe</span> 2025
+    </footer>
+</body>
+</html>

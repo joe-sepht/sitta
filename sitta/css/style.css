@@ -1,0 +1,727 @@
+/* ==========================
+   Reset & Base
+========================== */
+html, body {
+  overflow-x: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  background: #0c1936;
+  color: #e6ebf8;
+}
+
+main, .dashboard, .search-form, .hasil {
+  flex: 1;
+}
+
+body.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+body.dashboard-page {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================
+   Login Form
+========================== */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 350px;
+}
+
+.login-header {
+    text-align: center;
+    margin-top: 0.3rem;
+    margin-bottom: 0.1rem;
+}
+
+.login-logo img {
+    width: 230px; /* Sesuaikan ukuran logo */
+    height: auto;
+}
+
+.login-title {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin: 0.1rem;
+}
+
+.login-form {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.login-form .input-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.login-form label {
+  display: block;
+  color: #150248;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  text-align: left;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #4b5563;
+  background-color: #ffffff;
+  color: #010e92;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 10px 0 15px;
+  font-size: 0.9rem;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  color: #150248;
+  cursor: pointer;
+  user-select: none;
+  margin-top: 1.5px;
+}
+
+.remember-me input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #4a3cff;
+  margin: 0;
+}
+
+.forgot-password {
+  text-decoration: none;
+  color: #4f46e5;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.forgot-password a:hover {
+  color: #4338ca;
+  text-decoration: underline;
+}
+
+/* Tombol utama */
+.btn-full-width {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  background-color: #4f46e5;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-full-width:hover {
+  background-color: #4338ca;
+}
+
+/* Footer */
+.login-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.login-footer p {
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.login-footer a {
+  color: #4f46e5;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.login-footer a:hover {
+  color: #4338ca;
+}
+
+/* Tombol show/hide password */
+.password-group {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 0.75rem;
+  top: 2.75rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #4b5563;
+}
+
+.toggle-password svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ==========================
+   Navbar
+========================== */
+.main-header {
+  position: fixed;
+}
+
+.navbar-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 7rem;
+  background:transparent;
+  z-index: 101;
+}
+
+.navbar-left img {
+  width: auto;
+  height: 4rem;
+}
+
+.navbar-right {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding: 0.5rem auto;
+  background: #0b1728;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+/* Container link */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+/* Link di navbar */
+.nav-links a {
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Efek hover biar interaktif */
+.nav-links a:hover {
+  color: #d4e3f5;
+  text-shadow: 0 0 3px rgba(96,165,250,0.4), 0 0 6px rgba(96,165,250,0.3);      
+}
+
+.nav-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+  filter: brightness(0) invert(1); /* Biar ikon putih di background gelap */
+}
+
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+#logout-btn {
+  background-color: #4f46e5;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#logout-btn:hover {
+  background-color: #4338ca;
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+}
+
+/* Dropdown menu (tersembunyi dulu) */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #374151;
+  border-radius: 6px;
+  min-width: 220px;
+  padding: 0.5rem 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: white;
+}
+
+.dropdown-menu a:hover {
+  background-color: #4b5563;
+}
+
+.dropdown.active .dropdown-menu {
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+/* ==========================
+   Dashboard
+========================== */
+.dashboard {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.dashboard h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.dashboard h2 {
+  font-size: 22px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search-form input {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  width: 250px;
+}
+
+.search-form button {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  background: #4f46e5;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.search-container {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.hasil {
+  margin-top: 20px;
+  color: #fff;
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.perjalanan {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.perjalanan p {
+  margin: 5px 0;
+}
+
+.alur {
+  padding: 0rem 1rem;           /* Spasi dalam */
+  background-color:none;        /* Tidak ada latar */
+  text-align: center;           /* Rata tengah */
+}
+
+.alur h2 {
+  font-size: 3rem;              /* Judul besar */
+  margin-bottom: 0.5rem;        /* Jarak bawah */
+}
+
+.alur h2 span {
+  color: var(--primary, #007bff); /* Warna merah/biru fallback */
+}
+
+.alur p {
+  color: #ffffff;               /* Teks putih */
+  max-width: 800px;             /* Lebar maksimal */
+  margin: 0 auto 2rem;          /* Tengah + jarak bawah */
+  font-size: 1.5rem;            /* Ukuran font */
+  margin-bottom: 1.5rem;          /* Jarak bawah besar */
+}
+
+.alur-container {
+  display: flex;                /* Flexbox */
+  flex-wrap: wrap;              /* Bungkus ke bawah */
+  gap: 1.5rem;                  /* Jarak antar item */
+  justify-content: center;      /* Rata tengah */
+  width: 100%;       /* Isi penuh layar */
+  max-width: 1200px; /* Batas maksimal biar tidak terlalu lebar */
+  margin: 0 auto;    /* Rata tengah di layar */
+  padding: 1rem;     /* Spasi dalam container */
+  margin-bottom: 2rem;
+}
+
+.alur-item {
+  background: #fff;             /* Latar putih */
+  border-radius: 12px;          /* Sudut tumpul */
+  padding: 1.5rem;              /* Spasi dalam */
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;  /* Konten rata tengah vertikal */
+  justify-content: center; /* Konten rata tengah horizontal */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Bayangan ringan */
+  flex: 1 1 200px;              /* Fleksibel */
+  width: 250px;         /* Lebar tetap */
+  height: 180px;        /* Tinggi tetap */
+  max-width: 280px;             /* Lebar maksimal */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animasi hover */
+}
+
+.alur-item:hover {
+  transform: translateY(-5px);  /* Naik sedikit saat hover */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12); /* Bayangan lebih dalam */
+}
+
+.alur-item img {
+  max-width: 80px;              /* Gambar kecil */
+  margin-bottom: 1rem;          /* Jarak bawah */
+}
+
+.alur-item h3 {
+  font-size: 1rem;            /* Subjudul */
+  margin-bottom: 0.5rem;        /* Jarak bawah */
+  color: #333;                  /* Warna abu gelap */
+}
+
+.alur-item p {
+  font-size: 1.2rem;            /* Teks lebih kecil */
+  color: #2302a8;               /* Biru */
+}
+
+
+/* ==========================
+   Bahan Ajar
+========================== */
+.bahan-ajar-container {
+  max-width: 420px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.bahan-ajar-container img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.bahan-ajar-container h2 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #333;
+}
+
+.info-item {
+  margin-bottom: 10px;
+}
+
+.info-item label {
+  display: block;
+  font-weight: 600;
+  color: #555;
+}
+
+.info-item span {
+  display: block;
+  background: #f4f4f4;
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin-top: 4px;
+  color: #010e92;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 1rem;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card .cover {
+    width: 100%;
+    height: 200px; /* 💡 atur tinggi gambar di sini */
+    object-fit: cover; /* biar proporsi tetap bagus */
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    color: #010e92;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.card .btn {
+    display: inline-block;
+    background-color: #010e92;
+    color: #fff;
+    padding: 8px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 200;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.card .btn:hover {
+    background-color: #155ab6;
+    transform: translateY(-2px);
+}
+
+.add-button-container {
+    text-align: center;
+    margin: 40px 0 60px;
+}
+
+.add-btn {
+    background-color: #010e92;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.15);
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.add-btn:hover {
+    background-color: #155ab6;
+    transform: translateY(-2px);
+}
+
+.add-buttoncontainer {
+    text-align: center;
+    margin: 40px 0 60px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.addbtn {
+    background-color: #010e92;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.15);
+    transition: background 0.2s ease, transform 0.15s ease;
+    text-decoration: none;
+}
+
+.addbtn:hover {
+    background-color: #155ab6;
+    transform: translateY(-2px);
+}
+
+/* ==========================
+   Footer
+========================== */
+.footer {
+  background-color: #0b1728;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: auto;
+  width: 100%;
+}
+
+.footer span {
+  color: var(--primary, #007bff);
+}
+
+/* ==========================
+   Responsif Mobile
+========================== */
+@media (max-width: 768px) {
+  /* ====== Umum ====== */
+  html, body {
+  overflow-x: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  background: #0c1936;
+  color: #e6ebf8;
+  font-size: 0.9rem;
+}
+
+  /* ====== Login Page ====== */
+  body.login-page {
+    padding: 1rem;
+    background: #0c1936;
+  }
+
+  .login-container {
+    max-width: 100%;
+    width: 100%;
+    padding:0 1.4rem;
+  }
+
+  .login-logo img {
+    width: 260px;
+    height: auto;
+  }
+
+  .login-form {
+    padding: 1.2rem;
+  }
+
+  .login-form input {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .btn-full-width {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .password-group {
+  position: relative;
+  }
+
+  .toggle-password {
+    position: absolute;
+    right: 0.75rem;
+    top: 2.35rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #4b5563;
+  }
+
+  .toggle-password svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* ====== Navbar ====== */
+  .main-header {
+    position: relative !important;
+    width: 100%;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .navbar-left {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    height: auto;
+    background: transparent;
+  }
+
+  .navbar-left img {
+    height: 4.5rem;
+    width: auto;
+  }
+
+  .navbar-right {
+    display: none;
+  }
+
+}
